@@ -1,0 +1,16 @@
+﻿@using Domain.Entities
+@model IEnumerable<Product>
+
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+@foreach (var p in Model)
+{
+    <div>
+        @p.Name
+        @p.Description
+    </div>
+}
