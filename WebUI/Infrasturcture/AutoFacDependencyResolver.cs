@@ -6,6 +6,7 @@ using Domain.Abstract;
 using Domain.Entities;
 using System.Collections.Generic;
 using Domain.Concrete;
+using Domain.Fake;
 
 namespace WebUI.Infrastructure
 {
@@ -22,10 +23,11 @@ namespace WebUI.Infrastructure
 
             // register one instance
             //FAKE repo
-            // builder.RegisterInstance(CreateFakeRepoImplementation()).As<IProductRepository>().SingleInstance();
+            //builder.RegisterInstance(CreateFakeRepoImplementation()).As<IProductRepository>().SingleInstance();
+            builder.RegisterType<MoqProductRepository>().As<IProductRepository>().SingleInstance();
 
             //EF repo
-            builder.RegisterType<EFProductRepository>().As<IProductRepository>().SingleInstance();
+            //builder.RegisterType<EFProductRepository>().As<IProductRepository>().SingleInstance();
 
             // Set the dependency resolver to be Autofac
             var container = builder.Build();

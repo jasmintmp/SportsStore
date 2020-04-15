@@ -10,7 +10,7 @@ using Moq;
 
 namespace Domain.Fake
 {
-    class MoqProductRepository : IProductRepository
+    public class MoqProductRepository : IProductRepository
     {
         
         public IEnumerable<Product> Products
@@ -18,7 +18,7 @@ namespace Domain.Fake
             get { return CreateFakeRepoImplementation(); }
         }
 
-        IEnumerable<Product> IProductRepository.Products => throw new NotImplementedException();
+       
 
         /// <summary>
         /// Using Moq library to reproduce a repository interface implementation 
@@ -32,6 +32,7 @@ namespace Domain.Fake
             new Product {Name = "Kajak", Category = "Sporty wodne", Price = 275M},
             new Product {Name = "Kamizelka ratunkowa", Category = "Sporty wodne", Price = 48.95M},
             new Product {Name = "Piłka nożna", Category = "Piłka nożna", Price = 19.50M},
+            new Product {Name = "rakieta", Category = "Sport halowy", Price = 31.95M},
             new Product {Name = "Flaga narożna", Category = "Piłka nożna", Price = 34.95M}
             };
 

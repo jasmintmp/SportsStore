@@ -14,15 +14,19 @@ namespace WebUI.Controllers
     {
         
         private IProductRepository db;
+        public int PageSize = 2;
 
         public ProductController(IProductRepository productRepository)
         {
             db = productRepository;
         }
         // GET: Product https://localhost:44341/product/list
-        public ViewResult List()
+        public ViewResult List(int page = 1)
         { 
-            return View(db.Products);
+            return View(db.Products
+                .OrderBy(p=> p.ProductID)
+                .Skip(PageSize * (page -1))
+                .Take(PageSize));
             //return View(db.Products.ToList());
         }
 
