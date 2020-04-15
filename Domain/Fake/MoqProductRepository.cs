@@ -1,12 +1,8 @@
 ﻿using Domain.Abstract;
-using Domain.Concrete;
 using Domain.Entities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Moq;
+
 
 namespace Domain.Fake
 {
@@ -26,7 +22,7 @@ namespace Domain.Fake
         /// Pretending to be DB.
         /// </summary>
         /// <returns></returns>
-        private IEnumerable<Product> CreateFakeRepoImplementation()
+        public IEnumerable<Product> CreateFakeRepoImplementation()
         {
             return new List<Product>{
             new Product {Name = "Kajak", Category = "Sporty wodne", Price = 275M},

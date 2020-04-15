@@ -32,6 +32,10 @@ namespace WebUI.Infrastructure
             // Set the dependency resolver to be Autofac
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+
+            //manually resolve
+            //var calc2 = DependencyResolver.Current.GetService<IValueCalculator>();
+
         }
 
     }
