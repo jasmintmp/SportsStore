@@ -9,8 +9,9 @@
 <h2>List</h2>
 @foreach (var p in Model)
 {
-    <div>
-        @p.Name
-        @p.Description
-    </div>
+<div>
+    @p.Name
+    @p.Description
+    <h4>@p.Price.ToString("c")</h4>
+</div>
 }
