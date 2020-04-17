@@ -22,12 +22,13 @@ namespace WebUI.Infrastructure
             //builder.RegisterType<HomeController>().InstancePerRequest();
 
             // register one instance
-            //FAKE repo
             //builder.RegisterInstance(CreateFakeRepoImplementation()).As<IProductRepository>().SingleInstance();
-            builder.RegisterType<MoqProductRepository>().As<IProductRepository>().SingleInstance();
+
+            //FAKE repo
+            //builder.RegisterType<MoqProductRepository>().As<IProductRepository>().SingleInstance();
 
             //EF repo
-            //builder.RegisterType<EFProductRepository>().As<IProductRepository>().SingleInstance();
+            builder.RegisterType<EFProductRepository>().As<IProductRepository>().SingleInstance();
 
             // Set the dependency resolver to be Autofac
             var container = builder.Build();

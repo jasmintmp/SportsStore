@@ -1,17 +1,21 @@
-﻿@using Domain.Entities
-@model IEnumerable<Product>
+﻿@model WebUI.Models.ProductListViewModel
 
 
 @{
     ViewBag.Title = "List";
 }
 
-<h2>List</h2>
-@foreach (var p in Model)
+
+@foreach (var p in Model.Products)
 {
-<div>
-    @p.Name
-    @p.Description
-    <h4>@p.Price.ToString("c")</h4>
-</div>
+    @Html.Partial("ProductSummary",p)
+
 }
+    <div>
+        @*https://localhost:44341/CategoryBasketPage1*@
+        @Html.PageLinks(Model.PagingInfo, i => Url.Action("List", 
+       new { category = Model.CurrentCategory, page = i }))
+    </div>
+
+
+
