@@ -93,8 +93,8 @@ namespace SportsStore.UnitTest
             PagingInfo pageInfo = result.PagingInfo;
             Assert.AreEqual(pageInfo.CurrentPage, 2);
             Assert.AreEqual(pageInfo.ItemsPerPage, 3);
-            Assert.AreEqual(pageInfo.TotalItemsInCategory, 5);
-            Assert.AreEqual(pageInfo.TotalItemsInCategory, 2);
+            Assert.AreEqual(5, pageInfo.TotalItemsInCategory);
+
         }
 
         [Test]
