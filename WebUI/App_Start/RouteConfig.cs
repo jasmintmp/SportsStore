@@ -22,7 +22,7 @@ namespace WebUI
             //    );
             routes.MapRoute(
                 null,"",
-                defaults: new { controller = "Product", action = "List", category = (string)null, page = 1 }
+                new { controller = "Product", action = "List", category = (string)null, page = 1 }
                 );
 
             routes.MapRoute(
