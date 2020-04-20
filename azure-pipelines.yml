@@ -32,3 +32,11 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+    
+- task: AzureRmWebAppDeployment@4
+  displayName: 'Azure App Service Deploy: SportsStore-2-dev-as'
+  inputs:
+    azureSubscription: 'Visual Studio Professional (de194086-2d5d-4d71-9344-b8f23f90c553)'
+    WebAppName: 'SportsStore-2-dev-as'
+    packageForLinux: 'D:\a\r1\a\Drop\drop\SportsStore.WebUI.zip'
